@@ -1,0 +1,57 @@
+.header {
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  top: 0;
+
+  background-color: #201a31;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header button {
+  color: #ffffff;
+  background-color: #4d4561;
+  height: 40px; /* Adjusted height */
+  width: 120px; /* Adjusted width */
+  border-radius: 20px; /* Adjusted border-radius */
+  font-size: 18px; /* Adjusted font-size */
+  border: none; /* Removed border */
+  cursor: pointer;
+  margin-top: 1vh;
+  margin-right: 1.5vw;
+  transition: background-color 0.3s ease; /* Added transition for smooth hover effect */
+}
+
+.header button:hover {
+  background-color: #5e5275; /* Darken the background color on hover */
+}
+.header img {
+  height: 12vh;
+  width: 12vw;
+  padding-left: 5vw;
+}
+.nav-child2 {
+  display: flex;
+  gap: 4vw;
+  padding-right: 5vw;
+  color: #ffffff;
+}
+.nav-child2 h4 {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 2vh;
+  font-weight: 0;
+  margin-top: 2vh;
+}
+.nav-child2 h4:hover {
+  text-shadow: #070101;
+  color: #ffb730;
+  cursor: pointer;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+}
+/* sicu-aura_logo-removebg 3 */
