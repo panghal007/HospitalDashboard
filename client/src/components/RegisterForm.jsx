@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import SuccessModal from "./SuccessModal";
 import "./RegisterForm.css";
+import SuccessOverlay from "./SuccessOverlay";
 
 
 
 
 const Register = ({ onSuccess }) => {
+  const navigate = useNavigate();
+
   const [file, setFile] = useState(null);
   const [hospitalName, setHospitalName] = useState("");
   const [address, setAddress] = useState("");
@@ -21,6 +24,7 @@ const Register = ({ onSuccess }) => {
   const [registrationNumber, setRegistrationNumber] = useState("");
   const [emergencyWardNumber, setEmergencyWardNumber] = useState("");
   const [password, setPassword] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
 
   //   const [hospitalData, setHospitalData] = useState({
@@ -58,12 +62,20 @@ const Register = ({ onSuccess }) => {
     formData.append("password", password);
 
     try {
-      await axios.post(
+     const response= await axios.post(
         "http://localhost:5000/api/hospitals/register",
         formData
       );
+      console.log(response);
+      if (response.statusText == "OK") {
+        setIsModalOpen(true);
+        setTimeout(() => {
+            setIsModalOpen(false);
+            navigate("/login");
+        }, 1000);
+    }
       
-      onSuccess();
+      
     } catch (err) {
       console.error("Registration failed:", err);
     }
@@ -80,6 +92,7 @@ const Register = ({ onSuccess }) => {
   return (
       
       <div className="form-container">
+        <SuccessOverlay isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         <form
           onSubmit={handleSubmit}
           className="form-container2"

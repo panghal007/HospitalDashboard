@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import SuccessModal from "./SuccessModal";
 import "./MainPage.css";
 
@@ -11,6 +11,7 @@ import { Container } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 
 const MainPage = () => {
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState("login");
 
     const handleTabChange = (tab) => {
@@ -35,6 +36,11 @@ const MainPage = () => {
 
             {/* Right side with tabs */}
             <div style={{ width: "60%", padding: "20px" }}>
+            <div className="nav-container">
+                    <NavLink to="/">Sign Up</NavLink>
+                    <span className="">/</span>
+                    <NavLink to="/login">Login</NavLink>
+                </div>
                 <Outlet />
             </div>
         </div>

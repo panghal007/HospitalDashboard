@@ -67,7 +67,7 @@ app.post('/api/hospitals/register', upload.single('registrationCertificate'),(re
 
     
     // Save the hospital to the database
-     hospital.save().then(()=>res.json("saved")).catch((err)=>res.status(400).json(`error:${err}`));
+     hospital.save().then(()=>res.status(200).json("saved")).catch((err)=>res.status(400).json(`error:${err}`));
 
     // Send success response
 });

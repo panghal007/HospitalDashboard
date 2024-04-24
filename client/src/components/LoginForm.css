@@ -41,10 +41,7 @@
 h2 span {
   color: #4adc30; /* Color for the span text */
 }
-.webcam {
-  height: 100%;
-  width: 60%;
-}
+
 .login--container {
   background-color: #fff;
   padding: 4vw;
@@ -116,4 +113,63 @@ h2 span {
 
 .toggle-button.inactive {
   opacity: 0.5;
+}
+/* LoginForm.css */
+.webcam {
+  display: flex;
+  
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.webcam button {
+    background-color: #E82470;
+    color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.webcam button:hover {
+  background-color: #45a049;
+}
+
+.captured-image {
+    display: flex;
+  
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;/* Center vertically */
+  height: 100%;
+}
+
+.captured-image img {
+  max-width: 100%;
+  max-height: 100%; /* Ensure the image doesn't exceed the container */
+  border-radius: 5px;
+}
+
+.captured-image button {
+  position: relative;
+    display:inline;
+  background-color: #E82470;
+  color: white;
+  border: none;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.captured-image button:hover {
+  background-color: #e53935;
 }

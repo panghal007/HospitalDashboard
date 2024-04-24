@@ -32,7 +32,7 @@ const Navbar = () => {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to="/">
+          <Link to="/login">
             <button>Sign In</button>
           </Link>
         )}

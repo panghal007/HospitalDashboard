@@ -56,5 +56,29 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     justify-content: center;
   }
+  .nav-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: larger;
+    color: #cccccc;
+}
+
+.nav-container > span {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.nav-container > a {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.active {
+    color: #000000;
+}
   
   
