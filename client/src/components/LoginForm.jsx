@@ -105,15 +105,12 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-container">
-      
-      <div className="right">
-        <form onSubmit={handleSubmit}>
+    
+        <form className="login-form"onSubmit={handleSubmit}>
           {renderFormFields()}
           {/* {step < 2 && <button type="submit">Next</button>} */}
         </form>
-      </div>
-    </div>
+      
   );
 };
 

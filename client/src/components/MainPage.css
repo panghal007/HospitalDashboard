@@ -1,84 +1,127 @@
+.hero {
+  height: 100%;
+}
 .image-container {
-    position: relative;
-    height: 100%;
-    width: 40%;
-  }
-  .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .image-container .logo {
-    z-index: 999;
-    height: 50vh;
-    width: 25vw;
-    margin-top: 15vh;
-    left: 49%; /* Position at the center horizontally */
-  
-    /* margin-left: 6vw; */
-    transform: translateX(-50%);
-  }
-  .form-container {
-    /* Add or modify these styles */
-    position: relative; /* Change position to relative */
-    max-width: 100%; /* Ensure the form container doesn't exceed the width of its parent */
-    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
-    height: 100%; /* Set the height to 100% to fill the parent container */
-  }
-  .login-container{
-    position: relative; /* Change position to relative */
-    max-width: 100%; /* Ensure the form container doesn't exceed the width of its parent */
-    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
-    height: 100%;
-  }
-  
-  .image-container h2 {
-    position: absolute;
-    bottom: 30vh; /* Adjust the distance from the bottom */
-    left: 50%; /* Position at the center horizontally */
-    transform: translateX(-50%); /* Center the element horizontally */
-    color: #fff; /* Optional: Text color */
-    font-family: "Poppins";
-  }
-  
-  h2 span {
-    color: #4adc30; /* Optional: Color for the span text */
-  }
-  .right {
-    height: 100%;
-    width: 60%;
-    padding-right: 5vw;
-    padding-left: 5vw;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-  }
-  .nav-container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    font-weight: bold;
-    font-size: larger;
-    color: #cccccc;
+  position: relative;
+  height: 100%;
+  width: 40%;
+}
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.image-container .logo {
+  z-index: 999;
+  height: 50vh;
+  width: 25vw;
+  margin-top: 15vh;
+  left: 49%;
+  transform: translateX(-50%);
+}
+
+.image-container h2 {
+  position: absolute;
+  font-size: 3vh;
+  bottom: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: "Poppins";
+}
+
+h2 span {
+  color: #4adc30; 
+}
+
+.logo2 {
+  height: 80px;
+  width: 80px;
+}
+
+/* Center the login/signup links */
+.right {
+  height: 100%;
+  width: 60%;
+  padding: 20px;
+}
+
+/* Style for login/signup links */
+
+.nav-container {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: larger;
+  color: #cccccc;
+  margin-bottom: 1vh;
 }
 
 .nav-container > span {
-    font-weight: bold;
-    font-size: x-large;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .nav-container > a {
-    font-weight: bold;
-    font-size: x-large;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .active {
-    color: #000000;
+  color: #000000;
 }
-  
-  
+
+@media screen and (max-width: 600px) {
+  .hero {
+    display: grid;
+    flex-direction: column;
+  }
+
+  .image-container {
+    position: relative;
+    height: 16%;
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .image-container .logo {
+    z-index: 999;
+    height: 15vh;
+    width: 40vw;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .image-container h2 {
+    display: none;
+  }
+
+  h2 span {
+    color: #4adc30;
+  }
+  .logo2 {
+    height: 35px;
+    width: 35px;
+    display: none;
+  }
+  .nav-container {
+  }
+  .nav-container > span {
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .nav-container > a {
+    font-weight: bold;
+    font-size: large;
+  }
+}

@@ -2,13 +2,11 @@
 const bcrypt = require('bcrypt');
 const express = require('express');
 const mongoose = require('mongoose');
-const hospitalRoutes = require('./routes/hospitalRoutes');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const Hospital = require('./models/Hospital');
 
-const hospitalController = require('./controllers/hospitalController');
 
 
 const app = express();
@@ -36,8 +34,7 @@ const storage = multer.diskStorage({
 // Initialize multer middleware
 const upload = multer({ storage: storage });
 
-// Routes
-// app.use('/api/hospitals', hospitalRoutes);
+
 
 // POST route for handling file uploads
 app.post('/api/hospitals/register', upload.single('registrationCertificate'),(req,res) =>{
@@ -57,14 +54,6 @@ app.post('/api/hospitals/register', upload.single('registrationCertificate'),(re
             registrationCertificate: req.file.originalname,
             password:req.body.password
         });
-    // }
-    // catch (error) {
-    //     // Handle error
-    //     console.error('Error registering hospital:', error);
-    //     res.status(500).json({ message: 'Internal server error' });
-    //   }
-    
-
     
     // Save the hospital to the database
      hospital.save().then(()=>res.status(200).json("saved")).catch((err)=>res.status(400).json(`error:${err}`));
@@ -148,7 +137,7 @@ app.get('/api/hospitals/data', async (req, res) => {
 
   
   // Connect to MongoDB
-mongoose.connect('mongodb+srv://panghalunique:rm63JOwd7Wtyw31Z@cluster0.duzryck.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     // Start the server once connected to MongoDB

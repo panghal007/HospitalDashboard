@@ -1,79 +1,95 @@
-/* Register.css */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins";
-}
-.register-container {
+/* RegisterForm.css */
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: fit-content;
 }
-.image-container {
-  position: relative;
-  height: 100%;
-  width: 40%;
+
+.form-container2 {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: fit-content;
+  width: 600px;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px;
 }
-.image-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.form-container2 input,
+.form-container2 button {
   width: 100%;
-  height: 100%;
+  border-bottom: 1px solid #818181; 
+
 }
-.image-container .logo {
-  z-index: 999;
-  height: 50vh;
-  width: 25vw;
-  margin-top: 15vh;
-  left: 49%; /* Position at the center horizontally */
-
-  /* margin-left: 6vw; */
-  transform: translateX(-50%);
-}
-
-.form-container {
-  /* Add or modify these styles */
-  position: relative; /* Change position to relative */
-  max-width: 100%; /* Ensure the form container doesn't exceed the width of its parent */
-  overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
-  height: 100%; /* Set the height to 100% to fill the parent container */
-}
-
-
-.form-heading {
-  text-align: center;
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.form-submit-btn {
+.form-container2 button {
   width: 100%;
-  padding: 12px;
-  background-color: #007bff;
+  padding: 10px;
+  background-color: #000a14;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
+  border: 1px solid #000000; 
+
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.form-submit-btn:hover {
-  background-color: #0056b3;
+.form-container2 button:hover {
+  background-color: #ffffff;
+  color: #000a14;
+  border: 1px solid #000000; 
+}
+.form-container2 input[type="file"] {
+  grid-column: 2; 
+  
+}
+.form-container2 input[type="file"]::-webkit-file-upload-button {
+  padding: 7px; 
+  cursor: pointer; 
+  background-color: #000a14; 
+  color: #fff; 
+  border: none; 
+  font-size: 1.8vh;
+  width: 100px;
+  border: 1px solid #000000; 
+  border-radius: 2px;
+  transition: background-color 0.3s;
 }
 
-.image-container h2 {
-  position: absolute;
-  bottom: 30vh; /* Adjust the distance from the bottom */
-  left: 50%; /* Position at the center horizontally */
-  transform: translateX(-50%); /* Center the element horizontally */
-  color: #fff; /* Optional: Text color */
-  font-family: "Poppins";
+/* Style the "Choose File" button on hover */
+.form-container2 input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #ffffff; 
+  color: #000a14;
+  border: 1px solid #000000; 
 }
 
-h2 span {
-  color: #4adc30; /* Optional: Color for the span text */
+/* Set the grid column span for other input fields */
+.form-container2 input[type="text"],
+.form-container2 input[type="date"],
+.form-container2 input[type="number"],
+.form-container2 input[type="email"],
+.form-container2 input[type="password"] {
+  grid-column: span 1; 
+}
+@media screen and (max-width: 600px) {
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+  }
+  
+  .form-container2 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    height: fit-content;
+    width: 500px; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }

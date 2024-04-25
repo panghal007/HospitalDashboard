@@ -8,20 +8,24 @@ import {
     ModalBody,
     ModalFooter,
     Text,
+    Flex, 
 } from "@chakra-ui/react";
+import "./navbar.css";
 
 function SuccessOverlay({ isOpen, onClose }) {
     return (
         <Modal isCentered isOpen={isOpen} onClose={onClose}>
             <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />
             <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
+                <ModalHeader><Flex justify="center">
+                        <img src="tick.png" className="tick" />
+                    </Flex></ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text>Custom backdrop filters!</Text>
+                    <Text fontSize="xl"><Flex justify="center">Your Registration has been Successful !</Flex></Text>
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={onClose}>Close</Button>
+                    
                 </ModalFooter>
             </ModalContent>
         </Modal>

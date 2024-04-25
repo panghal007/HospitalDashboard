@@ -1,7 +1,6 @@
 .header {
   width: 100%;
   height: 100px;
-  position: sticky;
   top: 0;
 
   background-color: #201a31;
@@ -13,23 +12,23 @@
 .header button {
   color: #ffffff;
   background-color: #4d4561;
-  height: 40px; /* Adjusted height */
-  width: 120px; /* Adjusted width */
-  border-radius: 20px; /* Adjusted border-radius */
-  font-size: 18px; /* Adjusted font-size */
-  border: none; /* Removed border */
+  height: 40px; 
+  width: 120px;
+  border-radius: 20px; 
+  font-size: 18px; 
+  border: none; 
   cursor: pointer;
   margin-top: 1vh;
   margin-right: 1.5vw;
-  transition: background-color 0.3s ease; /* Added transition for smooth hover effect */
+  transition: background-color 0.3s ease; 
 }
 
 .header button:hover {
-  background-color: #5e5275; /* Darken the background color on hover */
+  background-color: #5e5275; 
 }
 .header img {
-  height: 12vh;
-  width: 12vw;
+  height: 100px;
+  width: 200px;
   padding-left: 5vw;
 }
 .nav-child2 {
@@ -55,3 +54,55 @@
   margin-bottom: 10px;
 }
 /* sicu-aura_logo-removebg 3 */
+.tick {
+  height: 75px;
+  width: 75px;
+}
+@media screen and (max-width: 600px) {
+  .nav-child2 {
+    display: flex; 
+    gap: 4vw;
+    color: #ffffff;
+  }
+  .header {
+    width: 100%;
+  }
+  .header img {
+    height: 12vh;
+    width: 30px;
+    padding-left: 5vw;
+  }
+
+  .nav-child2 h4 {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5vh;
+    font-weight: 0;
+    margin-top: 2vh;
+  }
+
+  .nav-child2 h4:hover {
+    text-shadow: #070101;
+    color: #817b6e;
+    cursor: pointer;
+  }
+  .header button {
+    color: #ffffff;
+    background-color: #4d4561;
+    height: 30px; 
+    width: 70px; 
+    border-radius: 20px; 
+    font-size: 14px; 
+    border: none; 
+    cursor: pointer;
+    margin-top: 1vh;
+    transition: background-color 0.3s ease; 
+  }
+}
+@media screen and (max-width: 500px) {
+  .header img {
+    width: 25vw;
+    height: 25vw;
+    padding-left: 0vw;
+  }
+}

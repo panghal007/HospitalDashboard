@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link , useNavigate} from "react-router-dom";
-import SuccessModal from "./SuccessModal";
 import "./RegisterForm.css";
 import SuccessOverlay from "./SuccessOverlay";
 
 
 
 
-const Register = ({ onSuccess }) => {
+const Register = () => {
   const navigate = useNavigate();
 
   const [file, setFile] = useState(null);
@@ -26,23 +25,6 @@ const Register = ({ onSuccess }) => {
   const [password, setPassword] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
-  //   const [hospitalData, setHospitalData] = useState({
-  //     hospitalName: '',
-  //     address: '',
-  //     city: '',
-  //     state: '',
-  //     pincode: '',
-  //     registrationDate: '',
-  //     ambulancesAvailable: '',
-  //     email: '',
-  //     phone: '',
-  //     registrationNumber: '',
-  //     emergencyWardNumber: '',
-  //     // registrationCertificate: '',
-  //     password: '',
-  //     // confirmPassword: ''
-  //   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,7 +54,7 @@ const Register = ({ onSuccess }) => {
         setTimeout(() => {
             setIsModalOpen(false);
             navigate("/login");
-        }, 1000);
+        }, 1500);
     }
       
       
@@ -81,14 +63,7 @@ const Register = ({ onSuccess }) => {
     }
   };
 
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     setHospitalData(prevData => ({
-  //       ...prevData,
-  //       [name]: value
-  //     }));
-  //   };
- 
+
   return (
       
       <div className="form-container">
