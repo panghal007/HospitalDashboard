@@ -1,6 +1,8 @@
 ## Live link :<br>
 https://hospital-dashboard-zeta.vercel.app/
 
+PS: Please wait for some time for the backend to run after clicking any button ( Render.com is slow 😪😐)
+
 ### Demo Video
 
 https://github.com/panghal007/HospitalDashboard/assets/108991691/e30ca10e-b216-419d-b28e-ded92a527b47
